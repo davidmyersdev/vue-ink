@@ -1,8 +1,8 @@
 <template>
-  <div class="container rounded d-flex align-items-center justify-content-center p-3 mw-100 mb-2">
-    <figure class="m-0">
-      <img :src="source" @load="onLoad" @error="onError" :alt="alt" class="mw-100">
-      <figcaption v-if="showCaptions && alt" class="sans-serif text-center mt-3"><small>{{ alt }}</small></figcaption>
+  <div class="container">
+    <figure class="figure">
+      <img :src="source" @load="onLoad" @error="onError" :alt="alt">
+      <figcaption v-if="showCaptions && alt" class="caption sans-serif"><small>{{ alt }}</small></figcaption>
     </figure>
   </div>
 </template>
@@ -22,10 +22,30 @@ export default {
 
 <style scoped>
 .container {
-  background-color: rgba(0, 0, 0, 0.3)
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 0.25rem !important;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  max-width: 100%;
 }
 
 .container img {
+  display: block;
   max-height: 20rem;
+  max-width: 100%;
+}
+
+.container .figure {
+  margin: 0;
+}
+
+.container .caption {
+  text-align: center;
+  margin-top: 1rem;
 }
 </style>
