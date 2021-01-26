@@ -2,7 +2,17 @@
   <div class="app">
     <h1>vue-markdown-editor</h1>
     <p>A Markdown editor component for Vue that renders in place without the need for a preview pane. This is the component that powers <a href="https://github.com/voraciousdev/octo">Octo</a>.</p>
-    <MarkdownEditor v-model="markdown" class="editor" />
+    <MarkdownEditor v-model="markdown" :theme="theme" :settings="{ images: { enabled: true } }" class="editor" />
+    <div class="toggle">
+      <label>
+        <input v-model="theme" type="radio" value="light">
+        <span>light</span>
+      </label>
+      <label>
+        <input v-model="theme" type="radio" value="dark">
+        <span>dark</span>
+      </label>
+    </div>
   </div>
 </template>
 
@@ -17,7 +27,14 @@ export default {
   data() {
     return {
       markdown: '# Hello, World!',
+      theme: 'dark',
     }
+  },
+  watch: {
+    theme(value) {
+      document.body.classList.remove('dark', 'light')
+      document.body.classList.add(value)
+    },
   },
 }
 </script>
@@ -32,8 +49,6 @@ html {
 }
 
 body {
-  background-color: #111;
-  color: #aaa;
   font-family: sans-serif;
   height: 100vh;
   height: -webkit-fill-available;
@@ -43,7 +58,6 @@ body {
 }
 
 a {
-  color: #aaa;
   font-weight: bold;
 }
 
@@ -53,9 +67,35 @@ a {
   width: 100%;
 }
 
+.toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+}
+
 .editor {
-  background-color: #050505;
   border-radius: 0.25em;
   padding: 1em;
+}
+
+.dark {
+  background-color: #111;
+  color: #aaa;
+}
+
+.dark a {
+  color: #aaa;
+}
+
+.dark .editor {
+  background-color: #050505;
+}
+
+.light a {
+  color: #000;
+}
+
+.light .editor {
+  background-color: #eee;
 }
 </style>

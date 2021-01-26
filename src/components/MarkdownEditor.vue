@@ -1,5 +1,5 @@
 <template>
-  <codemirror :options="options" :value="value" @input="onInput" @ready="onReady" />
+  <codemirror class="editor" :class="{ dark: (theme === 'dark'), light: (theme === 'light') }" :options="options" :value="value" @input="onInput" @ready="onReady" />
 </template>
 
 <script>
@@ -45,6 +45,10 @@ export default {
       default: () => ({
         // nothing yet
       }),
+    },
+    theme: {
+      type: String,
+      default: 'dark',
     },
     value: String,
   },
@@ -231,87 +235,116 @@ export default {
 }
 </script>
 
-<style>
-.CodeMirror.cm-s-yeti {
+<style scoped>
+.editor >>> .CodeMirror.cm-s-yeti {
   background-color: transparent !important;
 }
 
-.CodeMirror.cm-s-yeti .cm-comment {
-  color: #9e9e9e;
+.editor >>> .CodeMirror .cm-m-markdown:not(.cm-comment) {
+  font-family: sans-serif !important;
 }
 
-.CodeMirror.cm-s-yeti .cm-formatting-em, .CodeMirror.cm-s-yeti .cm-formatting-strong, .CodeMirror.cm-s-yeti .cm-formatting-strikethrough {
-  color: #444;
-}
-
-.CodeMirror.CodeMirror-focused.cm-s-yeti .CodeMirror-selected, .CodeMirror.cm-s-yeti .CodeMirror-selected {
-  background: #555;
-}
-
-.CodeMirror.cm-s-yeti.cm-fat-cursor .CodeMirror-cursor {
-  background: #557bab;
-}
-
-.CodeMirror.cm-s-yeti .cm-animate-fat-cursor {
-  background-color: #557bab;
-}
-
-.CodeMirror.cm-s-yeti .cm-m-markdown.cm-variable-2:not(.cm-comment),
-.CodeMirror.cm-s-yeti .cm-m-markdown.cm-variable-3:not(.cm-comment),
-.CodeMirror.cm-s-yeti .cm-m-markdown.cm-keyword:not(.cm-comment) {
-  color: #d1c9c0;
-}
-
-.CodeMirror.cm-s-yeti .cm-m-markdown.cm-formatting-list {
-  color: #96c0d8 !important;
-}
-
-.CodeMirror .cm-m-markdown:not(.cm-comment) {
-  font-family: 'Fira Sans', arial !important;
-}
-
-.CodeMirror {
-  color: #fff;
+.editor >>> .CodeMirror {
   min-height: 100%;
   height: auto;
 }
 
-.CodeMirror {
+.editor >>> .CodeMirror {
   position: relative;
   font-size: 1em;
   line-height: 2.25em;
 }
 
-.CodeMirror pre.CodeMirror-line,
-.CodeMirror pre.CodeMirror-line-like {
+.editor >>> .CodeMirror pre.CodeMirror-line,
+.editor >>> .CodeMirror pre.CodeMirror-line-like {
   padding: 0;
 }
 
-.CodeMirror .cm-header-1 {
+.editor >>> .CodeMirror .cm-header-1 {
   font-size: 1.6em;
 }
 
-.CodeMirror .cm-header-2 {
+.editor >>> .CodeMirror .cm-header-2 {
   font-size: 1.5em;
 }
 
-.CodeMirror .cm-header-3 {
+.editor >>> .CodeMirror .cm-header-3 {
   font-size: 1.4em;
 }
 
-.CodeMirror .cm-header-4 {
+.editor >>> .CodeMirror .cm-header-4 {
   font-size: 1.3em;
 }
 
-.CodeMirror .cm-header-5 {
+.editor >>> .CodeMirror .cm-header-5 {
   font-size: 1.2em;
 }
 
-.CodeMirror .cm-header-6 {
+.editor >>> .CodeMirror .cm-header-6 {
   font-size: 1.1em;
 }
 
-.CodeMirror-scroll {
+.editor >>> .CodeMirror-scroll {
   overflow-y: hidden !important;
+}
+
+/* dark and light themes */
+
+.editor >>> .CodeMirror.cm-s-yeti .cm-m-markdown.cm-formatting-list {
+  color: #96c0d8 !important;
+}
+
+.editor >>> .CodeMirror.cm-s-yeti .cm-comment {
+  color: #9e9e9e;
+}
+
+.light.editor >>> .CodeMirror .CodeMirror-line,
+.light.editor >>> .CodeMirror .CodeMirror-line-like {
+  color: #000;
+}
+
+.dark.editor >>> .CodeMirror.cm-s-yeti .cm-formatting-em,
+.dark.editor >>> .CodeMirror.cm-s-yeti .cm-formatting-strong,
+.dark.editor >>> .CodeMirror.cm-s-yeti .cm-formatting-strikethrough {
+  color: #444;
+}
+
+.light.editor >>> .CodeMirror.cm-s-yeti .cm-formatting-em,
+.light.editor >>> .CodeMirror.cm-s-yeti .cm-formatting-strong,
+.light.editor >>> .CodeMirror.cm-s-yeti .cm-formatting-strikethrough {
+  color: #bbb;
+}
+
+.dark.editor >>> .CodeMirror.CodeMirror-focused.cm-s-yeti .CodeMirror-selected,
+.dark.editor >>> .CodeMirror.cm-s-yeti .CodeMirror-selected {
+  background: #555;
+}
+
+.dark.editor >>> .CodeMirror.cm-s-yeti.cm-fat-cursor .CodeMirror-cursor {
+  background: #557bab;
+}
+
+.dark.editor >>> .CodeMirror.cm-s-yeti .cm-animate-fat-cursor {
+  background-color: #557bab;
+}
+
+.dark.editor >>> .CodeMirror.cm-s-yeti .cm-m-markdown.cm-variable-2:not(.cm-comment),
+.dark.editor >>> .CodeMirror.cm-s-yeti .cm-m-markdown.cm-variable-3:not(.cm-comment),
+.dark.editor >>> .CodeMirror.cm-s-yeti .cm-m-markdown.cm-keyword:not(.cm-comment) {
+  color: #d1c9c0;
+}
+
+.light.editor >>> .CodeMirror.cm-s-yeti .cm-m-markdown.cm-variable-2:not(.cm-comment),
+.light.editor >>> .CodeMirror.cm-s-yeti .cm-m-markdown.cm-variable-3:not(.cm-comment),
+.light.editor >>> .CodeMirror.cm-s-yeti .cm-m-markdown.cm-keyword:not(.cm-comment) {
+  color: #444;
+}
+
+.dark.editor >>> .CodeMirror {
+  color: #fff;
+}
+
+.light.editor >>> .caption {
+  color: #444;
 }
 </style>

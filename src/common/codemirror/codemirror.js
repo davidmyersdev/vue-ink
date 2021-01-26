@@ -1,13 +1,18 @@
 import CodeMirror from 'codemirror'
 import 'codemirror/mode/meta'
 
-const modes = []
+let modes = []
 let vimLoaded = false
 
 const addModeScript = (mode, options) => {
   const modeUrl = getModeUrl(mode)
+  const onerror = () => {
+    modes = modes.filter((m) => m !== mode)
 
-  addScript(modeUrl, options)
+    options.onerror()
+  }
+
+  addScript(modeUrl, { onload: options.onload, onerror })
 }
 
 const addScript = (url, { onload, onerror }) => {
@@ -55,6 +60,12 @@ export const loadMode = (fuzzyMode, options) => {
   const mode = fuzzyFindMode(fuzzyMode)
 
   if (mode && mode.mode !== 'null' && !modes.some((m) => m.mode === mode.mode)) {
+    if (mode.mode === 'vue') {
+      loadMode('html', options)
+      loadMode('css', options)
+      loadMode('js', options)
+    }
+
     modes.push(mode)
 
     // ensure CodeMirror namespace exists in the browser
