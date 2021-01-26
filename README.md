@@ -1,3 +1,7 @@
+[![latest tag](https://img.shields.io/github/v/tag/voraciousdev/vue-markdown-editor?color=blue&label=latest%20tag&sort=semver)](https://github.com/voraciousdev/vue-markdown-editor/releases)
+[![license](https://img.shields.io/github/license/voraciousdev/vue-markdown-editor)](https://github.com/voraciousdev/vue-markdown-editor/blob/master/LICENSE)
+[![open issues](https://img.shields.io/github/issues-raw/voraciousdev/vue-markdown-editor)](https://github.com/voraciousdev/vue-markdown-editor/issues)
+
 # vue-markdown-editor
 
 A Markdown editor component for Vue that renders in place without the need for a preview pane. This is the component that powers [Octo](https://github.com/voraciousdev/octo).
