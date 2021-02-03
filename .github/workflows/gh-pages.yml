@@ -8,18 +8,13 @@ on:
   #   types: [published]
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
       - run: yarn install
       - run: yarn build_demo
-
-  publish:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
