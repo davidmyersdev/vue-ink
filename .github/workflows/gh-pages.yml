@@ -13,8 +13,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
-      - run: npm ci
-      - run: npm run build_demo
+      - run: yarn install
+      - run: yarn build_demo
 
   publish:
     needs: build
