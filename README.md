@@ -6,15 +6,15 @@
 
 A Markdown editor component for Vue that renders in place without the need for a preview pane. This is the component that powers [Octo](https://github.com/voraciousdev/octo).
 
-![screenshot](images/screenshot.png)
+![screenshot](https://i.imgur.com/Zrjw7fo.gif)
 
 Check out a quick demo [on YouTube](https://youtu.be/LfhkoCAK6aA).
 
 ## Features
 
-### Dark Theme
+### Dark and Light Themes
 
-Works great with dark themes. Light theme coming soon! 😎
+Dark theme by default. Dynamic theme switching. 😎
 
 ### Inline Markdown Rendering
 
@@ -32,7 +32,7 @@ Code blocks are automatically highlighted based on the tagged language.
 npm install --save @voraciousdev/vue-markdown-editor
 ```
 
-### Use
+### Basic Usage
 
 ```vue
 <template>
@@ -50,6 +50,35 @@ export default {
   data() {
     return {
       markdown: '# Hello, World!'
+    }
+  },
+}
+</script>
+```
+
+### Change Themes
+
+The optional `theme` field accepts a string of either `dark` or `light`.
+
+```vue
+<template>
+  <input v-model="theme" type="radio" value="light"> light
+  <input v-model="theme" type="radio" value="dark"> dark
+  <MarkdownEditor v-model="markdown" :theme="theme" />
+</template>
+
+<script>
+import MarkdownEditor from '@voraciousdev/vue-markdown-editor'
+
+export default {
+  name: 'App',
+  components: {
+    MarkdownEditor,
+  },
+  data() {
+    return {
+      markdown: '# Hello, World!',
+      theme: 'light',
     }
   },
 }
