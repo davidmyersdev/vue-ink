@@ -13,7 +13,7 @@ import 'codemirror/addon/mode/simple'
 import 'codemirror/lib/codemirror.css'
 import 'codemirror/mode/gfm/gfm'
 import 'codemirror/mode/markdown/markdown'
-import 'codemirror/theme/yeti.css'
+import '@/assets/one-mixed.css'
 
 import { isVimLoaded, loadMode, loadVim } from '@/common/codemirror/codemirror'
 import Markdown from '@/common/markdown/markdown'
@@ -116,11 +116,12 @@ export default {
         lineWrapping: true,
         mode: {
           name: this.config.mode,
+          // fencedCodeBlockDefaultMode: 'html',
           highlightFormatting: true,
         },
         singleCursorHeightPerLine: true,
         tabSize: this.config.tabSize,
-        theme: 'yeti',
+        theme: 'one-mixed',
       }
     },
   },
@@ -236,12 +237,13 @@ export default {
 </script>
 
 <style scoped>
-.editor >>> .CodeMirror.cm-s-yeti {
+.editor >>> .CodeMirror.cm-s-one-mixed {
   background-color: transparent !important;
 }
 
 .editor >>> .CodeMirror .cm-m-markdown:not(.cm-comment) {
-  font-family: sans-serif !important;
+  font-family: helvetica, sans-serif;
+  font-size: 1em;
 }
 
 .editor >>> .CodeMirror {
@@ -255,93 +257,39 @@ export default {
   line-height: 2.25em;
 }
 
-.editor >>> .CodeMirror pre.CodeMirror-line,
-.editor >>> .CodeMirror pre.CodeMirror-line-like {
+.editor >>> .CodeMirror .CodeMirror-line,
+.editor >>> .CodeMirror .CodeMirror-line-like {
+  font-family: 'Courier New', monospace;
+  font-size: 1em;
   padding: 0;
 }
 
 .editor >>> .CodeMirror .cm-header-1 {
-  font-size: 1.6em;
+  font-size: 1.6em !important;
 }
 
 .editor >>> .CodeMirror .cm-header-2 {
-  font-size: 1.5em;
+  font-size: 1.5em !important;
 }
 
 .editor >>> .CodeMirror .cm-header-3 {
-  font-size: 1.4em;
+  font-size: 1.4em !important;
 }
 
 .editor >>> .CodeMirror .cm-header-4 {
-  font-size: 1.3em;
+  font-size: 1.3em !important;
 }
 
 .editor >>> .CodeMirror .cm-header-5 {
-  font-size: 1.2em;
+  font-size: 1.2em !important;
 }
 
 .editor >>> .CodeMirror .cm-header-6 {
-  font-size: 1.1em;
+  font-size: 1.1em !important;
 }
 
 .editor >>> .CodeMirror-scroll {
   overflow-y: hidden !important;
-}
-
-/* dark and light themes */
-
-.editor >>> .CodeMirror.cm-s-yeti .cm-m-markdown.cm-formatting-list {
-  color: #96c0d8 !important;
-}
-
-.editor >>> .CodeMirror.cm-s-yeti .cm-comment {
-  color: #9e9e9e;
-}
-
-.light.editor >>> .CodeMirror .CodeMirror-line,
-.light.editor >>> .CodeMirror .CodeMirror-line-like {
-  color: #000;
-}
-
-.dark.editor >>> .CodeMirror.cm-s-yeti .cm-formatting-em,
-.dark.editor >>> .CodeMirror.cm-s-yeti .cm-formatting-strong,
-.dark.editor >>> .CodeMirror.cm-s-yeti .cm-formatting-strikethrough {
-  color: #444;
-}
-
-.light.editor >>> .CodeMirror.cm-s-yeti .cm-formatting-em,
-.light.editor >>> .CodeMirror.cm-s-yeti .cm-formatting-strong,
-.light.editor >>> .CodeMirror.cm-s-yeti .cm-formatting-strikethrough {
-  color: #bbb;
-}
-
-.dark.editor >>> .CodeMirror.CodeMirror-focused.cm-s-yeti .CodeMirror-selected,
-.dark.editor >>> .CodeMirror.cm-s-yeti .CodeMirror-selected {
-  background: #555;
-}
-
-.dark.editor >>> .CodeMirror.cm-s-yeti.cm-fat-cursor .CodeMirror-cursor {
-  background: #557bab;
-}
-
-.dark.editor >>> .CodeMirror.cm-s-yeti .cm-animate-fat-cursor {
-  background-color: #557bab;
-}
-
-.dark.editor >>> .CodeMirror.cm-s-yeti .cm-m-markdown.cm-variable-2:not(.cm-comment),
-.dark.editor >>> .CodeMirror.cm-s-yeti .cm-m-markdown.cm-variable-3:not(.cm-comment),
-.dark.editor >>> .CodeMirror.cm-s-yeti .cm-m-markdown.cm-keyword:not(.cm-comment) {
-  color: #d1c9c0;
-}
-
-.light.editor >>> .CodeMirror.cm-s-yeti .cm-m-markdown.cm-variable-2:not(.cm-comment),
-.light.editor >>> .CodeMirror.cm-s-yeti .cm-m-markdown.cm-variable-3:not(.cm-comment),
-.light.editor >>> .CodeMirror.cm-s-yeti .cm-m-markdown.cm-keyword:not(.cm-comment) {
-  color: #444;
-}
-
-.dark.editor >>> .CodeMirror {
-  color: #fff;
 }
 
 .light.editor >>> .caption {
