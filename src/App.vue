@@ -100,6 +100,6 @@ a {
 }
 
 .light .editor {
-  background-color: #eee;
+  background-color: #fafafa;
 }
 </style>

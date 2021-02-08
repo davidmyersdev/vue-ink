@@ -1,0 +1,191 @@
+/* one-mixed - based on https://github.com/Aerobird98/codemirror-one-dark-theme */
+.cm-s-one-mixed .CodeMirror-selected {
+  background-color: #555;
+}
+.light .cm-s-one-mixed .CodeMirror-selected {
+  background-color: #ddd;
+}
+.cm-s-one-mixed .CodeMirror-gutter,
+.cm-s-one-mixed .CodeMirror-gutters {
+  border: none;
+  background-color: #282c34;
+}
+.cm-s-one-mixed .CodeMirror-linenumber,
+.cm-s-one-mixed .CodeMirror-linenumbers {
+  color: #5c6370 !important;
+  background-color: transparent;
+}
+.cm-s-one-mixed .CodeMirror-lines {
+  color: #abb2bf !important;
+  background-color: transparent;
+}
+.cm-s-one-mixed .CodeMirror-cursor {
+  border-left: 2px solid #96c0d8 !important;
+}
+.light .cm-s-one-mixed .CodeMirror-cursor {
+  border-left: 2px solid #579ac1 !important;
+}
+
+/* basic syntax */
+.cm-s-one-mixed .cm-header {
+  color: #e06c75;
+}
+.cm-s-one-mixed .cm-quote {
+  color: #5c6370;font-style: italic;
+}
+.cm-s-one-mixed .cm-negative {
+  color: #e06c75;
+}
+.cm-s-one-mixed .cm-positive {
+  color: #e06c75;
+}
+.cm-s-one-mixed .cm-strong {
+  color: inherit;font-weight: bold;
+}
+.cm-s-one-mixed .cm-header .cm-strong {
+  color: inherit;font-weight: bold;
+}
+.cm-s-one-mixed .cm-em {
+  color: inherit;font-style: italic;
+}
+.cm-s-one-mixed .cm-header .cm-em {
+  color: inherit;font-style: italic;
+}
+.cm-s-one-mixed .cm-tag {
+  color: #e06c75;
+}
+.cm-s-one-mixed .cm-attribute {
+  color: #d19a66;
+}
+.cm-s-one-mixed .cm-link {
+   color: inherit;
+}
+.cm-s-one-mixed .cm-url {
+   color: #96c0d8;
+}
+.light .cm-s-one-mixed .cm-url {
+   color: #579ac1;
+}
+.cm-s-one-mixed .cm-builtin {
+  color: #e06c75;
+}
+.cm-s-one-mixed .cm-keyword {
+  color: #c678dd;
+}
+.cm-s-one-mixed .cm-def {
+  color: #e5c07b;
+}
+.cm-s-one-mixed .cm-atom {
+  color: #d19a66;
+}
+.cm-s-one-mixed .cm-number {
+  color: #d19a66;
+}
+.cm-s-one-mixed .cm-property {
+  color: #96c0d8;
+}
+.light .cm-s-one-mixed .cm-property {
+  color: #579ac1;
+}
+.cm-s-one-mixed .cm-qualifier {
+  color: #d19a66;
+}
+.cm-s-one-mixed .cm-variable {
+  color: #e06c75;
+}
+.cm-s-one-mixed .cm-string:not(.cm-url):not(.cm-link) {
+  color: #98c379;
+}
+.cm-s-one-mixed .cm-punctuation {
+  color: #abb2bf;
+}
+.cm-s-one-mixed .cm-operator {
+  color: #96c0d8;
+}
+.light .cm-s-one-mixed .cm-operator {
+  color: #579ac1;
+}
+.cm-s-one-mixed .cm-meta {
+  color: #abb2bf;
+}
+.cm-s-one-mixed .cm-bracket {
+  color: #abb2bf;
+}
+.cm-s-one-mixed .cm-comment {
+  color: #5c6370;font-style: italic;
+}
+.cm-s-one-mixed .cm-error {
+  color: #e06c75;
+}
+
+/* css syntax corrections */
+.cm-s-one-mixed .cm-m-css.cm-variable {
+  color: #828997;
+}
+.cm-s-one-mixed .cm-m-css.cm-property  {
+  color: #abb2bf;
+}
+.cm-s-one-mixed .cm-m-css.cm-atom  {
+  color: #96c0d8;
+}
+.cm-s-one-mixed .cm-m-css.cm-builtin {
+  color: #96c0d8;
+}
+.light .cm-s-one-mixed .cm-m-css.cm-atom  {
+  color: #579ac1;
+}
+.light .cm-s-one-mixed .cm-m-css.cm-builtin {
+  color: #579ac1;
+}
+
+/* overrides */
+/* dark and light themes */
+
+.cm-s-one-mixed .cm-m-markdown.cm-formatting-list {
+  color: #96c0d8 !important;
+}
+
+.cm-s-one-mixed .cm-comment {
+  color: #9e9e9e;
+}
+
+.light .cm-s-one-mixed .cm-comment {
+  color: #9e9e9e;
+}
+
+.light .CodeMirror .CodeMirror-line,
+.light .CodeMirror .CodeMirror-line-like {
+  color: #000;
+}
+
+.cm-s-one-mixed .cm-formatting-em,
+.cm-s-one-mixed .cm-formatting-strong,
+.cm-s-one-mixed .cm-formatting-strikethrough {
+  color: #444;
+}
+
+.light .cm-s-one-mixed .cm-formatting-em,
+.light .cm-s-one-mixed .cm-formatting-strong,
+.light .cm-s-one-mixed .cm-formatting-strikethrough {
+  color: #bbb;
+}
+
+.cm-s-one-mixed.cm-fat-cursor .CodeMirror-cursor {
+  background: #557bab;
+}
+
+.cm-s-one-mixed .cm-animate-fat-cursor {
+  background-color: #557bab;
+}
+
+.cm-s-one-mixed .cm-m-markdown.cm-variable-2:not(.cm-comment),
+.cm-s-one-mixed .cm-m-markdown.cm-variable-3:not(.cm-comment),
+.cm-s-one-mixed .cm-m-markdown.cm-keyword:not(.cm-comment) {
+  color: #d1c9c0;
+}
+
+.light .cm-s-one-mixed .cm-m-markdown.cm-variable-2:not(.cm-comment),
+.light .cm-s-one-mixed .cm-m-markdown.cm-variable-3:not(.cm-comment),
+.light .cm-s-one-mixed .cm-m-markdown.cm-keyword:not(.cm-comment) {
+  color: #444;
+}
