@@ -6,7 +6,7 @@
 
 A Markdown editor component for Vue that renders in place without the need for a preview pane. This is the component that powers [Octo](https://github.com/voraciousdev/octo).
 
-![screenshot](https://i.imgur.com/Zrjw7fo.gif)
+![screenshot](https://i.imgur.com/H5NZj8Q.gif)
 
 Check out a quick demo [on YouTube](https://youtu.be/LfhkoCAK6aA).
 
