@@ -62,6 +62,7 @@ export default {
         keyMap: 'default',
         mode: 'gfm',
         tabSize: 2,
+        theme: 'one-mixed',
       },
       editor: null,
       isInitialVimModeSet: false,
@@ -121,7 +122,7 @@ export default {
         },
         singleCursorHeightPerLine: true,
         tabSize: this.config.tabSize,
-        theme: 'one-mixed',
+        theme: this.config.theme,
       }
     },
   },
