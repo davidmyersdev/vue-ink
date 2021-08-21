@@ -1,23 +1,20 @@
 {
-  "name": "@voraciousdev/vue-markdown-editor",
+  "name": "@writewithocto/vue-ink",
+  "description": "The configurable, embeddable, extensible Vue markdown editor that powers https://octo.app.",
   "license": "MIT",
-  "version": "v0.3.1",
-  "main": "./dist/MarkdownEditor.umd.js",
+  "version": "v0.4.0",
+  "main": "./dist/Ink.umd.js",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --target lib --name MarkdownEditor ./src/components/MarkdownEditor.vue",
+    "build": "vue-cli-service build --target lib --name Ink ./src/components/Ink.vue",
     "build_demo": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "codemirror": "^5.59.0",
+    "@writewithocto/ink": "^0.4.0",
     "core-js": "^3.6.5",
-    "deepmerge": "^4.2.2",
-    "vue": "^2.6.11",
-    "vue-class-component": "^7.2.3",
-    "vue-codemirror": "^4.0.6",
-    "vue-property-decorator": "^8.4.2"
+    "vue": "^2.6.11"
   },
   "devDependencies": {
     "@types/jest": "^24.0.19",
@@ -39,7 +36,10 @@
     "typescript": "~3.9.3",
     "vue-template-compiler": "^2.6.11"
   },
-  "files": [ "dist", "src" ],
+  "files": [
+    "dist",
+    "src"
+  ],
   "gitHooks": {
     "pre-commit": "lint-staged"
   },
