@@ -1,14 +1,14 @@
-[![latest tag](https://img.shields.io/github/v/tag/voraciousdev/vue-markdown-editor?color=blue&label=latest%20tag&sort=semver)](https://github.com/voraciousdev/vue-markdown-editor/releases)
-[![license](https://img.shields.io/github/license/voraciousdev/vue-markdown-editor)](https://github.com/voraciousdev/vue-markdown-editor/blob/master/LICENSE)
-[![open issues](https://img.shields.io/github/issues-raw/voraciousdev/vue-markdown-editor)](https://github.com/voraciousdev/vue-markdown-editor/issues)
+[![latest tag](https://img.shields.io/github/v/tag/writewithocto/vue-ink?color=blue&label=latest%20tag&sort=semver)](https://github.com/writewithocto/vue-ink/releases)
+[![license](https://img.shields.io/github/license/writewithocto/vue-ink)](https://github.com/writewithocto/vue-ink/blob/master/LICENSE)
+[![open issues](https://img.shields.io/github/issues-raw/writewithocto/vue-ink)](https://github.com/writewithocto/vue-ink/issues)
 
-# vue-markdown-editor
+# vue-ink
 
-A Markdown editor component for Vue that renders in place without the need for a preview pane. This is the component that powers [Octo](https://github.com/voraciousdev/octo).
+The configurable, embeddable, extensible Vue markdown editor that powers [octo.app](https://octo.app). This package is a wrapper around [Ink](https://github.com/writewithocto/ink).
 
-![screenshot](https://i.imgur.com/H5NZj8Q.gif)
+![screenshot](https://i.imgur.com/1tOS335.png)
 
-Check out a quick demo [on YouTube](https://youtu.be/LfhkoCAK6aA).
+Check out a quick demo [on YouTube](https://youtu.be/iyZiS0glaJE).
 
 ## Features
 
@@ -29,23 +29,23 @@ Code blocks are automatically highlighted based on the tagged language.
 ### Install
 
 ```shell
-npm install --save @voraciousdev/vue-markdown-editor
+npm install --save @writewithocto/vue-ink
 ```
 
 ### Basic Usage
 
 ```vue
 <template>
-  <MarkdownEditor v-model="markdown" />
+  <Ink v-model="markdown" />
 </template>
 
 <script>
-import MarkdownEditor from '@voraciousdev/vue-markdown-editor'
+import Ink from '@writewithocto/vue-ink'
 
 export default {
   name: 'App',
   components: {
-    MarkdownEditor,
+    Ink,
   },
   data() {
     return {
@@ -58,27 +58,27 @@ export default {
 
 ### Change Themes
 
-The optional `theme` field accepts a string of either `dark` or `light`.
+The optional `appearance` prop accepts a string of either `dark` (the default) or `light`.
 
 ```vue
 <template>
-  <input v-model="theme" type="radio" value="light"> light
-  <input v-model="theme" type="radio" value="dark"> dark
-  <MarkdownEditor v-model="markdown" :theme="theme" />
+  <input v-model="appearance" type="radio" value="dark"> dark
+  <input v-model="appearance" type="radio" value="light"> light
+  <Ink v-model="markdown" :appearance="appearance" />
 </template>
 
 <script>
-import MarkdownEditor from '@voraciousdev/vue-markdown-editor'
+import Ink from '@writewithocto/vue-ink'
 
 export default {
   name: 'App',
   components: {
-    MarkdownEditor,
+    Ink,
   },
   data() {
     return {
+      appearance: 'light',
       markdown: '# Hello, World!',
-      theme: 'light',
     }
   },
 }
@@ -105,16 +105,4 @@ yarn serve
 
 ```shell
 yarn build
-```
-
-### Run the unit tests
-
-```shell
-yarn test:unit
-```
-
-### Lint and fix files
-
-```shell
-yarn lint
 ```
