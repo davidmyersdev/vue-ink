@@ -17,6 +17,7 @@ export default {
     },
     attribution: {
       type: Boolean,
+      default: true,
     },
     images: {
       type: Boolean,
