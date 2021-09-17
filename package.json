@@ -2,7 +2,7 @@
   "name": "@writewithocto/vue-ink",
   "description": "The configurable, embeddable, extensible Vue markdown editor that powers https://octo.app.",
   "license": "MIT",
-  "version": "v0.5.0",
+  "version": "v0.5.1",
   "main": "./dist/ink.umd.js",
   "module": "./dist/ink.es.js",
   "scripts": {
