@@ -19,6 +19,10 @@ export default {
       type: Boolean,
       default: true,
     },
+    extensions: {
+      type: Array,
+      default: () => [],
+    },
     images: {
       type: Boolean,
       default: false,
@@ -75,6 +79,7 @@ export default {
       appearance: this.appearance,
       attribution: this.attribution,
       doc: this.value,
+      extensions: this.extensions,
       images: this.images,
       selection: this.initialSelection,
       spellcheck: this.spellcheck,
