@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
-    "build:demo": "vue-tsc --noEmit && vite --config demo.config.ts build",
+    "build:demo": "vue-tsc --noEmit && vite --config demo.config.ts build --base /vue-ink",
     "serve": "vite preview"
   },
   "dependencies": {
