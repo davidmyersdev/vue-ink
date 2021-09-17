@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
+    "build:demo": "vue-tsc --noEmit && vite --config demo.config.ts build",
     "serve": "vite preview"
   },
   "dependencies": {
@@ -16,6 +17,7 @@
     "vue": "^2.6.11"
   },
   "devDependencies": {
+    "@types/node": "^16.9.2",
     "@vitejs/plugin-vue": "^1.6.0",
     "@vue/compiler-sfc": "^3.2.8",
     "typescript": "^4.3.2",
