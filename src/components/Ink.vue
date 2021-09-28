@@ -7,6 +7,9 @@ import ink from '@writewithocto/ink'
 
 export default {
   name: 'Ink',
+  
+  emits: { 'update:modelValue': String },
+
   props: {
     appearance: {
       type: String,
@@ -34,7 +37,7 @@ export default {
       type: Boolean,
       default: true,
     },
-    value: {
+    modelValue: {
       type: String,
       default: '',
     },
@@ -57,7 +60,7 @@ export default {
     spellcheck(value) {
       this.instance.reconfigure({ spellcheck: value })
     },
-    value(value) {
+    modelValue(value) {
       if (this.instance.doc() !== value) {
         this.instance.update(value)
       }
@@ -78,13 +81,13 @@ export default {
     this.instance = ink(this.$refs.ink, {
       appearance: this.appearance,
       attribution: this.attribution,
-      doc: this.value,
+      doc: this.modelValue,
       extensions: this.extensions,
       images: this.images,
       selection: this.initialSelection,
       spellcheck: this.spellcheck,
       onChange: (doc) => {
-        this.$emit('input', doc)
+        this.$emit('update:modelValue', doc)
       },
     })
   },
