@@ -4,7 +4,9 @@
 
 # vue-ink
 
-The configurable, embeddable, extensible Vue markdown editor that powers [octo.app](https://octo.app). This package is a wrapper around [Ink](https://github.com/writewithocto/ink).
+The flexible TypeScript Markdown editor that powers [octo.app](https://octo.app) - packaged as a Vue component.
+
+Check out the framework-agnostic package at [writewithocto/ink](https://github.com/writewithocto/ink).
 
 ![screenshot](https://i.imgur.com/1tOS335.png)
 
