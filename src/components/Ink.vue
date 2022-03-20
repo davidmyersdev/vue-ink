@@ -2,91 +2,97 @@
   <div ref="ink"></div>
 </template>
 
-<script>
+<script lang="ts">
 import ink from '@writewithocto/ink'
+import { defineComponent } from 'vue'
 
-export default {
+import type * as Ink from '@writewithocto/ink'
+import type { PropType } from 'vue'
+
+export default defineComponent({
   name: 'Ink',
+  emits: ['input', 'update:modelValue'],
   props: {
-    appearance: {
+    options: {
+      type: Object as PropType<Ink.DeepPartial<Ink.Options>>,
+    },
+    modelValue: {
       type: String,
-      default: 'dark',
-      validator(appearance) {
-        return ['dark', 'light'].includes(appearance)
-      },
-    },
-    attribution: {
-      type: Boolean,
-      default: true,
-    },
-    extensions: {
-      type: Array,
-      default: () => [],
-    },
-    images: {
-      type: Boolean,
-      default: false,
-    },
-    initialSelection: {
-      type: Object,
-    },
-    spellcheck: {
-      type: Boolean,
-      default: true,
     },
     value: {
       type: String,
-      default: '',
+    },
+    version: {
+      type: Number,
+      default: () => 3,
+      validator: (value: number) => (
+        [2, 3].includes(value)
+      ),
     },
   },
   data() {
-    return {
-      instance: null,
-    }
+    return { instance: undefined } as { instance?: Ink.Instance }
   },
   watch: {
-    appearance(value) {
-      this.instance.reconfigure({ appearance: value })
+    options: {
+      deep: true,
+      handler(newValue, _oldValue) {
+        this.instance?.reconfigure(newValue)
+      },
     },
-    attribution(value) {
-      this.instance.reconfigure({ attribution: value })
-    },
-    images(value) {
-      this.instance.reconfigure({ images: value })
-    },
-    spellcheck(value) {
-      this.instance.reconfigure({ spellcheck: value })
-    },
-    value(value) {
-      if (this.instance.doc() !== value) {
-        this.instance.update(value)
+    modelValue(value) {
+      if (this.instance?.doc() !== value) {
+        this.instance?.update(value)
       }
+    },
+    value(value) { // Vue 2 support
+      if (this.instance?.doc() !== value) {
+        this.instance?.update(value)
+      }
+    },
+  },
+  computed: {
+    doc() {
+      return (this.version === 3 ? this.modelValue : this.value) || ''
     },
   },
   methods: {
     focus() {
-      this.instance.focus()
+      this.instance?.focus()
     },
-    select(selection) {
-      this.instance.select(selection)
+    select(selections: Ink.Editor.Selection[]) {
+      this.instance?.select(selections)
     },
-    selection() {
-      return this.instance.selection()
+    selections() {
+      return this.instance?.selections()
     },
   },
   mounted() {
-    this.instance = ink(this.$refs.ink, {
-      appearance: this.appearance,
-      attribution: this.attribution,
-      doc: this.value,
-      extensions: this.extensions,
-      images: this.images,
-      selection: this.initialSelection,
-      spellcheck: this.spellcheck,
-      onChange: (doc) => {
-        this.$emit('input', doc)
+    this.instance = ink(this.$refs.ink as HTMLElement, {
+      ...this.options,
+      doc: this.doc,
+      hooks: {
+        ...this.options?.hooks,
+        afterUpdate: (doc: string) => {
+          if (this.version === 3) {
+            this.$emit('update:modelValue', doc)
+          } else {
+            this.$emit('input', doc) // Vue 2 support
+          }
+
+          if (this.options?.hooks?.afterUpdate) {
+            this.options.hooks.afterUpdate(doc)
+          }
+        },
       },
     })
+
+    // @ts-ignore
+    this.$refs.ink.addEventListener('input', (event: InputEvent) => {
+      event.stopPropagation()
+    })
+
+    this.instance.focus()
   },
-}
+})
 </script>

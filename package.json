@@ -9,12 +9,12 @@
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "build:demo": "vue-tsc --noEmit && vite --config demo.config.ts build --base /vue-ink",
+    "build:unsafe": "vite build",
     "serve": "vite preview"
   },
   "dependencies": {
-    "@writewithocto/ink": "^0.5.0",
-    "core-js": "^3.6.5",
-    "vue": "^2.6.11"
+    "@writewithocto/ink": "^0.6.2",
+    "vue": "^3.2.31"
   },
   "devDependencies": {
     "@types/node": "^16.9.2",
@@ -22,8 +22,6 @@
     "@vue/compiler-sfc": "^3.2.8",
     "typescript": "^4.3.2",
     "vite": "^2.5.3",
-    "vite-plugin-vue2": "^1.8.1",
-    "vue-template-compiler": "^2.6.11",
     "vue-tsc": "^0.3.0"
   },
   "files": [
