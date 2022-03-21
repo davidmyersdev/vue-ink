@@ -475,9 +475,9 @@
     "@lezer/lr" "^0.15.0"
 
 "@replit/codemirror-vim@^0.19.0":
-  version "0.19.0"
-  resolved "https://registry.yarnpkg.com/@replit/codemirror-vim/-/codemirror-vim-0.19.0.tgz#505db5681c68a834691d2c5648cf44a8dd1cc01c"
-  integrity sha512-Uq0Q/sy0pM8HPWKHGHM3lTNi3o//+yYMySJThtLeiwOhXXQaAbpxVxdbSc20P3xUtLyJ2Xo3gy/FXgxXJDDqoQ==
+  version "0.19.1"
+  resolved "https://registry.yarnpkg.com/@replit/codemirror-vim/-/codemirror-vim-0.19.1.tgz#d21aeefb98bae9dbd5f1425c57237037ca33c195"
+  integrity sha512-9nlYgX4OkL18WkhJDWS38Q2OOl93eLbRik9wZSej0jbER7LdokpOLc6D/yUlzxlcRwSVlea/8c+grjNfkTzrbA==
 
 "@types/node@^16.9.2":
   version "16.11.26"
@@ -634,9 +634,9 @@
   integrity sha512-ymN2pj6zEjiKJZbrf98UM2pfDd6F2H7ksKw7NDt/ZZ1fh5Ei39X5tABugtT03ZRlWd9imccoK0hE8hpjpU7irQ==
 
 "@writewithocto/ink@^0.6.2":
-  version "0.6.4"
-  resolved "https://registry.yarnpkg.com/@writewithocto/ink/-/ink-0.6.4.tgz#04ee1725cfa2bb79a93365d8c29ff38750795327"
-  integrity sha512-UGgLGijsnHAb735BKBdrEOi4LppgVNuYpIPK76ZYQFnFvIqWhNUgnkj31pDqk0bNozN5w3XMtOT+obLuxK8aBg==
+  version "0.6.5"
+  resolved "https://registry.yarnpkg.com/@writewithocto/ink/-/ink-0.6.5.tgz#e09b64bce61d1cc79db82f64562582ee9fb5c4af"
+  integrity sha512-SVabB5uDa88s/Gub3RqxFutMsMBopJLiH2BRSTraaLULWRui42QZeLOJ2Z3qbtzdaZlcZ51ZjsNi2nwts77tuQ==
   dependencies:
     "@codemirror/commands" "^0.19.0"
     "@codemirror/comment" "^0.19.0"
