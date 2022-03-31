@@ -4,7 +4,7 @@
 
 # vue-ink
 
-The flexible TypeScript Markdown editor that powers [octo.app](https://octo.app) - packaged as a Vue component.
+The flexible TypeScript Markdown editor that powers [octo.app](https://octo.app) - packaged as a Vue 3 component.
 
 Check out the framework-agnostic package at [writewithocto/ink](https://github.com/writewithocto/ink).
 
@@ -14,17 +14,13 @@ Check out a quick demo [on YouTube](https://youtu.be/iyZiS0glaJE).
 
 ## Features
 
-### Dark and Light Themes
-
-Dark theme by default. Dynamic theme switching. 😎
-
-### Inline Markdown Rendering
-
-All Markdown formatting is rendered in place. This eliminates the need for a preview pane while keeping your document in plain text. Feel free to copy and paste your Markdown into or out of this editor!
-
-### Automatic Syntax Highlighting
-
-Code blocks are automatically highlighted based on the tagged language.
+- [x] Dark and light themes
+- [x] Hybrid plain-text Markdown rendering
+- [x] Syntax highlighting for many common languages (in code blocks)
+- [x] Drag-and-drop or paste to upload files
+- [x] Inline Markdown image previews
+- [x] Configurable and stylable
+- [x] Vim Mode
 
 ## Install and Use
 
@@ -41,49 +37,35 @@ npm install --save @writewithocto/vue-ink
   <Ink v-model="markdown" />
 </template>
 
-<script>
+<script lang="ts" setup>
 import Ink from '@writewithocto/vue-ink'
+import { ref } from 'vue'
 
-export default {
-  name: 'App',
-  components: {
-    Ink,
-  },
-  data() {
-    return {
-      markdown: '# Hello, World!'
-    }
-  },
-}
+const markdown = ref('# Hello, World!')
 </script>
 ```
 
-### Change Themes
+### Configure Ink
 
-The optional `appearance` prop accepts a string of either `dark` (the default) or `light`.
+The `options` prop is an [`Ink.Options`](https://github.com/writewithocto/ink) object.
 
 ```vue
 <template>
-  <input v-model="appearance" type="radio" value="dark"> dark
-  <input v-model="appearance" type="radio" value="light"> light
-  <Ink v-model="markdown" :appearance="appearance" />
+  <input v-model="options.interface.appearance" type="radio" value="dark"> dark
+  <input v-model="options.interface.appearance" type="radio" value="light"> light
+  <Ink v-model="markdown" :options="options" />
 </template>
 
-<script>
+<script lang="ts" setup>
 import Ink from '@writewithocto/vue-ink'
+import { reactive, ref } from 'vue'
 
-export default {
-  name: 'App',
-  components: {
-    Ink,
+const markdown = ref('# Hello, World!')
+const options = reactive({
+  interface: {
+    appearance: this.appearance,
   },
-  data() {
-    return {
-      appearance: 'light',
-      markdown: '# Hello, World!',
-    }
-  },
-}
+})
 </script>
 ```
 
@@ -100,7 +82,7 @@ yarn install
 ### Compile and hot-reload for development
 
 ```shell
-yarn serve
+yarn dev
 ```
 
 ### Compile for production
@@ -108,3 +90,18 @@ yarn serve
 ```shell
 yarn build
 ```
+
+## Support
+
+Your support is appreciated. Here are some ways you can help. ♥️
+
+### Tell us what you think
+
+Your feedback is immensely important for building Ink into a library that we all love. Consider [starting a discussion](https://github.com/writewithocto/octo/discussions) under [Octo](https://github.com/writewithocto/octo) if you have a question or just want to chat about ideas!
+
+### Become a financial backer
+
+- [GitHub Sponsors](https://github.com/sponsors/voraciousdev)
+- [Patreon](https://patreon.com/voraciousdev)
+- [Ko-Fi](https://ko-fi.com/voraciousdev)
+- [Buy Me a Coffee](https://www.buymeacoffee.com/voraciousdev)
