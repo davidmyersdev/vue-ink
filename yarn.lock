@@ -634,9 +634,9 @@
   integrity sha512-ymN2pj6zEjiKJZbrf98UM2pfDd6F2H7ksKw7NDt/ZZ1fh5Ei39X5tABugtT03ZRlWd9imccoK0hE8hpjpU7irQ==
 
 "@writewithocto/ink@^0.6.2":
-  version "0.6.7"
-  resolved "https://registry.yarnpkg.com/@writewithocto/ink/-/ink-0.6.7.tgz#bb3525d3135f0a3c25a5f9630478bfa3f5d8bd96"
-  integrity sha512-pHTU3YnhYmpEML8QsqU7VrgPiGc1vZLbrshFmy72bUGYqPQKJoBQg3oUTzZa2OeOCUiJXIZh46GiywxVuCeF9w==
+  version "0.6.8"
+  resolved "https://registry.yarnpkg.com/@writewithocto/ink/-/ink-0.6.8.tgz#5247154817f11576c119411da12669394ffd73e6"
+  integrity sha512-vb98qwEPQenn5wkuwekqxhjj11tHVHcEH+DELJy3pYgrRhHj283OxkFhqeHOLeT0Jpfjka+bBfoeHVpdKlkrBQ==
   dependencies:
     "@codemirror/commands" "^0.19.0"
     "@codemirror/comment" "^0.19.0"
