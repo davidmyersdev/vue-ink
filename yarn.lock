@@ -256,9 +256,9 @@
     "@codemirror/stream-parser" "^0.19.0"
 
 "@codemirror/language@^0.19.0":
-  version "0.19.9"
-  resolved "https://registry.yarnpkg.com/@codemirror/language/-/language-0.19.9.tgz#9025b88933a05ebb27f16db6f9297b7c069109f0"
-  integrity sha512-Rqh7sJduwNVWoLXbOx1nf1vh0zXSIMJ3XDSyISuiIDaOo6Ps7aXgO5BCn+oa3/1RIroEu6vo4PP/zP6B7NSRWg==
+  version "0.19.10"
+  resolved "https://registry.yarnpkg.com/@codemirror/language/-/language-0.19.10.tgz#c3d1330fa5de778c6b6b5177af5572a3d9d596b5"
+  integrity sha512-yA0DZ3RYn2CqAAGW62VrU8c4YxscMQn45y/I9sjBlqB1e2OTQLg4CCkMBuMSLXk4xaqjlsgazeOQWaJQOKfV8Q==
   dependencies:
     "@codemirror/state" "^0.19.0"
     "@codemirror/text" "^0.19.0"
@@ -634,9 +634,9 @@
   integrity sha512-ymN2pj6zEjiKJZbrf98UM2pfDd6F2H7ksKw7NDt/ZZ1fh5Ei39X5tABugtT03ZRlWd9imccoK0hE8hpjpU7irQ==
 
 "@writewithocto/ink@^0.6.2":
-  version "0.6.8"
-  resolved "https://registry.yarnpkg.com/@writewithocto/ink/-/ink-0.6.8.tgz#5247154817f11576c119411da12669394ffd73e6"
-  integrity sha512-vb98qwEPQenn5wkuwekqxhjj11tHVHcEH+DELJy3pYgrRhHj283OxkFhqeHOLeT0Jpfjka+bBfoeHVpdKlkrBQ==
+  version "0.6.9"
+  resolved "https://registry.yarnpkg.com/@writewithocto/ink/-/ink-0.6.9.tgz#3d6e6b2d9237c345de87723def4dfa9a2f80b890"
+  integrity sha512-t8Dww4BHHf1kc4fC2pvG6UvYwC4beFEYXEYlQ3q67/TAccp6H1PbEmlO2+3Dmyw66uBa7dsk2QLmPKWiRAsbqg==
   dependencies:
     "@codemirror/commands" "^0.19.0"
     "@codemirror/comment" "^0.19.0"
@@ -1225,9 +1225,9 @@ upath@^2.0.1:
   integrity sha512-1uEe95xksV1O0CYKXo8vQvN1JEbtJp7lb7C5U9HMsIp6IVwntkH/oNUzyVNQSd4S1sYk2FpSSW44FqMc8qee5w==
 
 vite@^2.5.3:
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/vite/-/vite-2.9.0.tgz#4417ce84a09d93c9e5a796b296285bc2f75d6c41"
-  integrity sha512-5NAnNqzPmZzJvrswZGeTS2JHrBGIzIWJA2hBTTMYuoBVEMh0xwE0b5yyIXFxf7F07hrK4ugX2LJ7q6t7iIbd4Q==
+  version "2.9.1"
+  resolved "https://registry.yarnpkg.com/vite/-/vite-2.9.1.tgz#84bce95fae210a7beb566a0af06246748066b48f"
+  integrity sha512-vSlsSdOYGcYEJfkQ/NeLXgnRv5zZfpAsdztkIrs7AZHV8RCMZQkwjo4DS5BnrYTqoWqLoUe1Cah4aVO4oNNqCQ==
   dependencies:
     esbuild "^0.14.27"
     postcss "^8.4.12"
