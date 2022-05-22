@@ -14,63 +14,28 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
+import { defineOptions } from '@writewithocto/ink'
+import { computed, ref, watch } from 'vue'
 import Ink from '/src/components/Ink.vue'
+import doc from '/src/assets/example.md?raw'
 
-import type { DeepPartial, Options, Values } from '@writewithocto/ink'
-
-export default defineComponent({
-  components: {
-    Ink,
-  },
-  data() {
-    return {
-      editor: undefined,
-      doc: [
-        '# Hello, World!',
-        '',
-        'This editor supports [Markdown](https://en.wikipedia.org/wiki/Markdown) with dynamic syntax highlighting for code.',
-        '',
-        '```js',
-        '// a snippet',
-        'const greet = (name) => {',
-        '  return `Hello, \${name}!`',
-        '}',
-        '```',
-      ].join('\n'),
-      options: {
-        files: {
-          dragAndDrop: true,
-          handler: this.onFiles,
-        },
-        interface: {
-          appearance: 'dark',
-          images: true,
-        },
-      } as DeepPartial<Options>,
-    }
-  },
-  computed: {
-    appearance: {
-      get() {
-        // @ts-ignore
-        return this.options.interface.appearance
-      },
-      set(value: Values.Appearance) {
-        if (this.options?.interface?.appearance) {
-          this.options.interface.appearance = value
-        }
-
-        document.documentElement.classList.remove('dark', 'light')
-        document.documentElement.classList.add(value)
-      },
-    },
-  },
-  methods: {
-    onFiles(files: FileList) {
+const appearance = ref<'dark' | 'light'>('dark')
+const options = computed(() => defineOptions({
+  files: {
+    dragAndDrop: true,
+    handler: (files: FileList) => {
       console.log({ files })
     },
   },
+  interface: {
+    appearance: appearance.value,
+    images: true,
+    toolbar: true,
+  },
+}))
+
+watch(appearance, () => {
+  document.documentElement.className = appearance.value
 })
 </script>

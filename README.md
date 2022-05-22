@@ -4,33 +4,37 @@
 
 # vue-ink
 
-The flexible TypeScript Markdown editor that powers [octo.app](https://octo.app) - packaged as a Vue 3 component.
+The flexible TypeScript Markdown editor that powers [octo.app](https://octo.app) - packaged as a Vue 3 component. You can also check out the framework-agnostic package at [writewithocto/ink](https://github.com/writewithocto/ink).
 
-Check out the framework-agnostic package at [writewithocto/ink](https://github.com/writewithocto/ink).
-
-![screenshot](https://i.imgur.com/1tOS335.png)
-
-Check out a quick demo [on YouTube](https://youtu.be/iyZiS0glaJE).
+![](screenshot.png)
 
 ## Features
 
 - [x] Dark and light themes
 - [x] Hybrid plain-text Markdown rendering
+- [x] Supports GitHub Flavored Markdown ([an extension of CommonMark](https://github.github.com/gfm/#what-is-github-flavored-markdown-))
 - [x] Syntax highlighting for many common languages (in code blocks)
 - [x] Drag-and-drop or paste to upload files
 - [x] Inline Markdown image previews
 - [x] Configurable and stylable
+- [x] An optional formatting toolbar (great for mobile)
 - [x] Vim Mode
 
-## Install and Use
+## Install the package
 
-### Install
+```bash
+# yarn
+yarn add @writewithocto/vue-ink
 
-```shell
+# npm
 npm install --save @writewithocto/vue-ink
 ```
 
-### Basic Usage
+## How to get started
+
+There are many ways to customize Ink to fit your needs. Here are a few examples to get you started.
+
+### Minimal setup
 
 ```vue
 <template>
@@ -45,7 +49,7 @@ const markdown = ref('# Hello, World!')
 </script>
 ```
 
-### Configure Ink
+### Configuration options
 
 The `options` prop is an [`Ink.Options`](https://github.com/writewithocto/ink) object.
 
@@ -63,13 +67,13 @@ import { reactive, ref } from 'vue'
 const markdown = ref('# Hello, World!')
 const options = reactive({
   interface: {
-    appearance: this.appearance,
+    appearance: 'dark',
   },
 })
 </script>
 ```
 
-## Contribute
+## Contributing
 
 This library uses `yarn`.
 
