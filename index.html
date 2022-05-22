@@ -10,9 +10,36 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter:wght@300;400;700&display=swap">
 
-    
-    <script type="module" crossorigin src="/vue-ink/assets/index.1c01ef85.js"></script>
-    <link rel="stylesheet" href="/vue-ink/assets/index.15ebf7fb.css">
+    <style>
+      :root {
+        --ink-code-font-family: 'Fira Code', 'Courier New', Courier, monospace;
+      }
+
+      body {
+        font-family: 'Inter', Helvetica, sans-serif;
+      }
+
+      .dark body {
+        background-color: #171717;
+        color: #fafafa;
+      }
+
+      .light body {
+        background-color: #fafafa;
+        color: #171717;
+      }
+
+      .editor {
+        margin: auto;
+        max-width: 75rem;
+        padding: 0.5em;
+      }
+
+      .editor .cm-editor.cm-focused {
+        outline: none;
+      }
+    </style>
+    <script type="module" crossorigin src="/vue-ink/assets/index.b77d7446.js"></script>
   </head>
   <body>
     <div id="app"></div>

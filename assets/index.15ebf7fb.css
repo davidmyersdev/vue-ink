@@ -1,1 +1,0 @@
-:root{--ink-all-font-family: "Inter", Helvetica, sans-serif;--ink-monospace-font-family: "Fira Code", "Courier New", Courier, monospace}body{font-family:var(--ink-all-font-family)}.dark body{background-color:#171717;color:#fafafa}.light body{background-color:#fafafa;color:#171717}.editor{margin:auto;max-width:75rem;padding:.5em}.editor .cm-editor.cm-focused{outline:none}
