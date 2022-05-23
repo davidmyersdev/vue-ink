@@ -2,6 +2,10 @@
   <div class="app">
     <div class="toggle">
       <label>
+        <input v-model="appearance" type="radio" value="auto">
+        <span>auto</span>
+      </label>
+      <label>
         <input v-model="appearance" type="radio" value="dark">
         <span>dark</span>
       </label>
@@ -20,7 +24,7 @@ import { computed, ref, watch } from 'vue'
 import Ink from '/src/components/Ink.vue'
 import doc from '/src/assets/example.md?raw'
 
-const appearance = ref<'dark' | 'light'>('dark')
+const appearance = ref<'auto' | 'dark' | 'light'>('auto')
 const options = computed(() => defineOptions({
   files: {
     dragAndDrop: true,

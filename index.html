@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" class="auto">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -24,9 +24,23 @@
         color: #fafafa;
       }
 
+      @media (prefers-color-scheme: dark) {
+        .auto body {
+          background-color: #171717;
+          color: #fafafa;
+        }
+      }
+
       .light body {
         background-color: #fafafa;
         color: #171717;
+      }
+
+      @media (prefers-color-scheme: light) {
+        .auto body {
+          background-color: #fafafa;
+          color: #171717;
+        }
       }
 
       .editor {
