@@ -1,6 +1,4 @@
-[![latest tag](https://img.shields.io/github/v/tag/writewithocto/vue-ink?color=blue&label=latest%20tag&sort=semver)](https://github.com/writewithocto/vue-ink/releases)
-[![license](https://img.shields.io/github/license/writewithocto/vue-ink)](https://github.com/writewithocto/vue-ink/blob/master/LICENSE)
-[![open issues](https://img.shields.io/github/issues-raw/writewithocto/vue-ink)](https://github.com/writewithocto/vue-ink/issues)
+**Notice: This project has been merged into the upstream [`writewithocto/ink`](https://github.com/writewithocto/ink/tree/main/packages/vue) package.** Please use that package instead.
 
 # vue-ink
 
